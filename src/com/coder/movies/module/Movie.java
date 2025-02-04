@@ -1,5 +1,7 @@
 package com.coder.movies.module;
 
+import java.util.Arrays;
+
 public class Movie {
 		
 	private int id;
@@ -7,12 +9,14 @@ public class Movie {
 	private int releaseDate;
 	private float rating;
 	private String category;
-	private String cast;
+	private String[] cast;
 	private String director;
 	
+	public Movie() {
+		super();
+	}
 	
-	
-	public Movie(int id, String tital, int releaseDate, float rating, String category, String cast, String director) {
+	public Movie(int id, String tital, int releaseDate, float rating, String category, String[] cast, String director) {
 		super();
 		this.id = id;
 		this.tital = tital;
@@ -22,8 +26,11 @@ public class Movie {
 		this.cast = cast;
 		this.director = director;
 	}
-	
-	
+
+
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -54,25 +61,31 @@ public class Movie {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getCast() {
+	
+	public String[] getCast() {
 		return cast;
 	}
-	public void setCast(String cast) {
+
+	public void setCast(String[] cast) {
 		this.cast = cast;
 	}
+
+	
 	public String getDirector() {
 		return director;
 	}
 	public void setDirector(String director) {
 		this.director = director;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Movie [id=" + id + ", tital=" + tital + ", releaseDate=" + releaseDate + ", rating=" + rating
-				+ ", category=" + category + ", cast=" + cast + ", director=" + director + "]";
+				+ ", category=" + category + ", cast=" + Arrays.toString(cast) + ", director=" + director + "]";
 	}
+	
+	
+
 	
 	
 }
